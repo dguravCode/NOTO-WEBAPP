@@ -34,6 +34,9 @@ A clean and modern note-taking web application that lets you create, pin, and ar
 2. Open `index.html` in your browser
 3. Start creating notes!
 
+## Live Link
+https://noto-webapp.vercel.app/
+
 ## Project Structure
 
 ```
@@ -55,4 +58,5 @@ A clean and modern note-taking web application that lets you create, pin, and ar
 - `js/app.js` - Note rendering logic
 - `js/archive.js` - Archive page functionality
 - `css/main.css` - Main styles
+
 - `css/utility.css` - Utility classes and animations
