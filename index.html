@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/note.png" type="image/x-icon">
+    <title>Home | Noto</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body class="boby" data-page="home">
+    <header class="heading d-flex">
+        <div class="d-flex align-cente rgap-sm">
+            <img class="note-png" src="./assets/note.png" alt="note-png">
+            <h1 class="heading-1">
+                <a href="/" class="link">Noto</a>
+            </h1>
+        </div>
+        <nav class="nav d-flex align-center">
+            <ul class="list-non-bullet">
+                <li class="list"><a href="./index.html" class="link cursor">Home</a></li>
+                <li class="list"><a href="./archive.html" class="link cursor">Archive</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container d-flex direction-column align-center relative">
+        <textarea class="text-area title" placeholder="Title"></textarea>
+        <textarea class="text-area note" placeholder="make a note..."></textarea>
+        <button class="button add-btn d-flex align-center justify-center absolute">
+            <span class="material-icon-outlined">Add</span>
+        </button>
+    </div>
+
+    <div class="notes-display">
+        <div class="pin-title d-none">Pinned</div>      <!--For pinned notes-->
+        <div class="pinned-notes-container d-flex wrap gap-md"></div>   <!--For pinned notes-->
+        <div class="other-title d-none">Unpinned</div>    <!--For Unpinned notes-->
+        <div class="notes-container d-flex wrap gap-md"></div>      <!--For Unpinned notes-->
+    </div>
+
+    <script type="module" src="./main.js"></script> <!--type "module"=> is used to import other js-files into current js-file.-->
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url("./utility.css");
+
+/* ------------- RESET ------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* ------------- HEADER ------------- */
+header {
+    padding: 0.5rem 1.5rem;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+    justify-content: space-between;
+}
+
+.heading-1 a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav a {
+    color: #515154;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color .2s;
+}
+
+.nav a:hover {
+    color: #007aff;
+}
+
+/* ------------- LAYOUT HELPERS ------------- */
+.d-flex            { display: flex; }
+.direction-column  { flex-direction: column; }
+.align-center      { align-items: center; }
+.justify-center    { justify-content: center; }
+.wrap              { flex-wrap: wrap; }
+.gap-sm            { gap: .5rem; }
+.gap-md            { gap: 1rem; }
+.relative          { position: relative; }
+.absolute          { position: absolute; }
+
+.d-none            { display: none; }  /*already in your markup*/
+/* .d-none            { display: block; }   */
+
+/* ------------- NOTE-INPUT ------------- */
+.container {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.text-area {
+    width: 100%;
+    resize: vertical;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    font-size: 1rem;
+    box-shadow: 0 1px 3px #05c8ef;
+    transition: border-color 0.2s;
+}
+
+.text-area:focus {
+    outline: none;
+    border-color: #007aff;
+}
+
+.text-area.title {
+    min-height: 3rem;
+    margin-bottom: .75rem;
+    font-weight: 600;
+}
+
+.text-area[placeholder="make a note..."] {
+    min-height: 6rem;
+}
+
+.add-btn {
+    bottom: -2.5rem;
+    right: 1rem;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    border-radius: 4px;
+    background: #007aff;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px #000000(2, 141, 192, 0.15);
+    transition: transform .2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.08);
+}
+
+
+/* ------------- NOTES GRID ------------- */
+.notes-display
+ {
+    max-width: 1184px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.pin-title,
+.other-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 .75rem;
+    color: #1d1d1f;
+    
+}
+
+.pinned-notes-container,
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+    max-width: 1311px;
+    padding-bottom: 3rem;
+}
+
+.material-icon,
+.pinned-btn{
+  color: aqua;
+}
+
+.note-png {
+    width: 40px;
+    height: 40px;
+    margin-top: 11px;
+}
+
+/* ------------------------------------------ JavaScript(main.js) --------------------------------------------- */
+.btn{
+  border: none;
+  background: none;
+}
+
+.ic--baseline-delete { /* js showing */
+  cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z'/%3E%3C/svg%3E");
+}
+
+.emojione--pushpin { /* js showing */
+  cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23000' d='M62 23.448L40.544 2c-.315 2.875.297 6.054 1.764 9.111L27.77 25.646c-5.529-3.519-11.593-5.079-16.941-4.483l14.143 14.148C18.714 42.195 4.687 59.055 2.59 61.152l-.071.068c-.845.844-.586 1.106.258.262c1.852-1.846 18.983-16.113 25.92-22.445L42.83 53.174c.592-5.298-.927-11.291-4.369-16.772l14.62-14.616c2.995 1.399 6.103 1.975 8.919 1.662'/%3E%3C/svg%3E");
+}
+
+.ic--outline-archive { /* js showing */
+  cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m20.54 5.23l-1.39-1.68C18.88 3.21 18.47 3 18 3H6c-.47 0-.88.21-1.16.55L3.46 5.23C3.17 5.57 3 6.02 3 6.5V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6.5c0-.48-.17-.93-.46-1.27M6.24 5h11.52l.81.97H5.44zM5 19V8h14v11zm8.45-9h-2.9v3H8l4 4l4-4h-2.55z'/%3E%3C/svg%3E");
+}
+
+/* ==== SINGLE NOTE CARD ==== */
+.single-note {
+
+  width: 260px;
+  min-height: 120px;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 12px 16px 14px;
+  margin: 8px;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgb(5 200 239);
+  transition: box-shadow 2.15s;
+}
+.single-note:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ==== TITLE BAR ==== */
+.title-container {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.title-container span {
+  font-weight: 600;
+  color: #111;
+}
+
+/* ==== NOTE TEXT ==== */
+.single-note p {
+  color: #333;
+  line-height: 1.4;
+  max-height: 120px;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+/* ==== BUTTONS ROW ==== */
+.option {
+  margin-top: 10px;
+}
+
+/* ==== HIDDEN BY DEFAULT ==== */
+
+.single-note:hover .v-hidden {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* ----------------------------------------------------------------------------------------------- */
+
+ 
